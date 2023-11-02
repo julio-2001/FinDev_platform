@@ -16,7 +16,7 @@ return new class extends Migration
             $table -> string('company',90) -> nullable(false);
             $table -> string('title',50) -> nullable(false);
             $table -> string('description',120) -> nullable(false);
-            $table -> unsignedInteger('experience') -> nullable(false);
+            $table -> unsignedBigInteger('experience') -> nullable(false);
             $table -> unsignedBigInteger('location') -> nullable(false);
             $table->timestamps();
         });

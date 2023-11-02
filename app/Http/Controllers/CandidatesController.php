@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 ##Models
 use App\Models\Candidates;
 use App\Models\Experiences;
+use App\Models\JobApplications;
 
 class CandidatesController extends Controller
 {
@@ -83,6 +84,11 @@ class CandidatesController extends Controller
     public function destroy(string $id)
     {
         $candidate = Candidates::find($id);
+        $JobApplications =  JobApplications::where('candidate_id',$id);
+
+        if($JobApplications ->exists()){
+            $JobApplications -> delete();
+        }
 
         $candidate -> delete();
         return redirect('/v1/pessoas');

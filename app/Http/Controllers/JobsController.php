@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Jobs;
 use App\Models\Experiences;
 
+##Models
+use App\Models\JobApplications;
 
 class JobsController extends Controller
 {
@@ -82,6 +84,12 @@ class JobsController extends Controller
      */
     public function destroy(string $id)
     {
+        $JobApplications =  JobApplications::where('job_id',$id);
+
+        if($JobApplications -> exists()){
+            $JobApplications -> delete();
+        }
+
         $Job = Jobs::find($id);
         $Job -> delete();
 

@@ -20,6 +20,7 @@
 
                     <span>Ir para pagina de <a class="underline" href="/v1/pessoas">candidatos</a></span>
                     <span>Ir para pagina de <a class="underline" href="/v1/vagas">Vagas</a></span>
+                    <span>Ir para pagina de <a class="underline" href="/v1/candidaturas">Candidaturas</a></span>
                 </div>
             </div>
         </div>

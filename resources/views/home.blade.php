@@ -14,9 +14,11 @@
                         </div>
                     @endif
 
-                    <h3 class="text-2xl">
+                    <h3 class="text-2xl mb-6">
                         {{ __('Autenticado com sucesso') }}
                     </h3>
+
+                    <span>Ir para pagina de <a class="underline" href="/v1/pessoas">candidatos</a></span>
                 </div>
             </div>
         </div>

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
+##Controllers
+use App\Http\Controllers\CandidatesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +27,10 @@ Route::group(['middleware' => "web"],function(){
 
 Route::group(['middleware' => 'auth'],function(){
 
+    #Rotas candidatos
+    Route::get('v1/pessoas',[CandidatesController::class, "index"]);
+    Route::get("v1/pessoas/cadastrar",[CandidatesController::class, "create"]);
+    Route::post("v1/pessoas/store",[CandidatesController::class, "store"]);
+    Route::get('v1/pessoas/{id}/edit',[CandidatesController::class,"edit"]);
+    Route::delete('v1/pessoas/{id}/delete',[CandidatesController::class,"destroy"]);
 });

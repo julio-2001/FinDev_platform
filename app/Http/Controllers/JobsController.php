@@ -16,7 +16,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::with('experiencesName')->get();
+        $jobs = Jobs::with('experiencesName','locationsName')->get();
         return view('jobs.list',["jobs" => $jobs]);
     }
 

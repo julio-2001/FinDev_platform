@@ -16,7 +16,7 @@ class CandidatesController extends Controller
      */
     public function index()
     {
-        $candidates = Candidates::with('experiencesName')->get();
+        $candidates = Candidates::with('experiencesName','locationsName')->get();
         return view('candidates.list', ['candidates' => $candidates]);
     }
 

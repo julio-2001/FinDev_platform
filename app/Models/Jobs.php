@@ -24,4 +24,9 @@ class Jobs extends Model
     {
         return $this->belongsTo(Experiences::class, 'experience');
     }
+
+    public function locationsName()
+    {
+        return $this->belongsTo(Location::class, 'location');
+    }
 }

@@ -38,7 +38,7 @@
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Candidato</span>{{$jobApp -> candidates -> nome}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nivel</span>{{$jobApp -> candidates -> experiencesName -> experience}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left md:text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold ">ID</span>{{$jobApp -> candidates -> id}}</td>
-                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">localização</span>{{$jobApp -> candidates -> location}}</td>
+                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">localização</span>{{$jobApp -> candidates -> locationsName -> location}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left md:text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">score</span>14</td>
 
                                     <td class="p-2 md:border md:border-grey-500 text-left flex">

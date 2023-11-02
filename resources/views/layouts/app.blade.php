@@ -70,6 +70,7 @@
                                     <span class="flex flex-col m-4 gap-2">
                                         <a class="underline" href="/v1/pessoas">Candidatos</a>
                                         <a class="underline" href="/v1/vagas">Vagas</a>
+                                        <a class="underline" href="/v1/candidaturas">Candidaturas</a>
                                     </span>
                                 </div>
                             </li>

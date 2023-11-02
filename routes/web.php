@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 ##Controllers
 use App\Http\Controllers\CandidatesController;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobApplicationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,14 @@ Route::group(['middleware' => 'auth'],function(){
     Route::post('v1/vagas/store',[JobsController::class,"store"]);
     Route::get('v1/vagas/{id}/edit',[JobsController::class,"edit"]);
     Route::delete('v1/vagas/{id}/delete',[JobsController::class, "destroy"]);
+
+    ## Rotas candidaturas
+    Route::get('v1/candidaturas',[JobApplicationsController::class, "index"]);
+    Route::get('v1/candidaturas/cadastrar',[JobApplicationsController::class, "create"]);
+    Route::post('v1/candidaturas/store',[JobApplicationsController::class, "store"]);
+    Route::delete('v1/candidaturas/{id}/delete/all',[JobApplicationsController::class, "destroyAll"]);
+
+    ## rota candidaturas/ranking
+    Route::get('v1/vagas/{id}/candidaturas/ranking',[JobApplicationsController::class, "ranking"]);
+    Route::delete('v1/vagas/*/candidaturas/{id}/ranking/delete',[JobApplicationsController::class, "destroy"]);
 });

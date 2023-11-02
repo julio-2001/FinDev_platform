@@ -37,7 +37,7 @@
                                 <tr class="bg-white border border-grey-500 md:border-none block md:table-row">
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nome</span>{{$candidate -> nome}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Profissão</span>{{$candidate -> profissao}}</td>
-                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nivel</span>{{$candidate -> experience}}</td>
+                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nivel</span>{{$candidate -> experiencesName -> experience}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left md:text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Local</span>{{$candidate -> location}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left flex">
 

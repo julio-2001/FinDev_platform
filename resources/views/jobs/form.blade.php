@@ -47,11 +47,14 @@
 
                         <select required class="w-full md:w-fit" name="experience">
                             <option value="" disabled selected>Escolha a experiencia</option>
-                            <option value="1">estagiario</option>
-                            <option value="2">junior</option>
-                            <option value="3">pleno</option>
-                            <option value="4">senior</option>
-                            <option value="5">especialista</option>
+
+                            @foreach ($experiences as $xp)
+                                @if (!empty($job))
+                                    <option value="{{$xp->id}}" @if($xp->id == $job -> experience) selected  @endif>{{$xp->experience}}</option>
+                                @else
+                                    <option value="{{$xp->id}}">{{$xp->experience}}</option>
+                                @endif
+                            @endforeach
                         </select>
 
                         <select required class="w-full md:w-fit" name="location">

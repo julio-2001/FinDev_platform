@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jobs;
+use App\Models\Experiences;
 
 
 class JobsController extends Controller
@@ -13,7 +14,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::all();
+        $jobs = Jobs::with('experiencesName')->get();
         return view('jobs.list',["jobs" => $jobs]);
     }
 
@@ -22,7 +23,8 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('jobs.form');
+        $experiences = Experiences::all();
+        return view('jobs.form',['experiences' => $experiences]);
     }
 
     /**
@@ -63,7 +65,8 @@ class JobsController extends Controller
     public function edit(string $id)
     {
         $job = Jobs::find($id);
-        return view('jobs.form',['job' => $job]);
+        $experiences = Experiences::all();
+        return view('jobs.form',['job' => $job, 'experiences' => $experiences]);
     }
 
     /**

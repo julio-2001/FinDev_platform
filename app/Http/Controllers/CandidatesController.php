@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 ##Models
 use App\Models\Candidates;
+use App\Models\Experiences;
 
 class CandidatesController extends Controller
 {
@@ -14,7 +15,7 @@ class CandidatesController extends Controller
      */
     public function index()
     {
-        $candidates = Candidates::all();
+        $candidates = Candidates::with('experiencesName')->get();
         return view('candidates.list', ['candidates' => $candidates]);
     }
 
@@ -23,7 +24,8 @@ class CandidatesController extends Controller
      */
     public function create()
     {
-        return view('candidates.form');
+        $experiences = Experiences::all();
+        return view('candidates.form',['experiences' => $experiences]);
     }
 
     /**
@@ -63,7 +65,8 @@ class CandidatesController extends Controller
     public function edit(string $id)
     {
         $candidate = Candidates::find($id);
-        return view('candidates.form',['candidate' => $candidate]);
+        $experiences = Experiences::all();
+        return view('candidates.form',['candidate' => $candidate, 'experiences' => $experiences]);
     }
 
     /**

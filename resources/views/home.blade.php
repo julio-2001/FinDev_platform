@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Autenticação') }}</div>
 
-                <div class="card-body">
+                <div class="card-body flex flex-col">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -19,6 +19,7 @@
                     </h3>
 
                     <span>Ir para pagina de <a class="underline" href="/v1/pessoas">candidatos</a></span>
+                    <span>Ir para pagina de <a class="underline" href="/v1/vagas">Vagas</a></span>
                 </div>
             </div>
         </div>

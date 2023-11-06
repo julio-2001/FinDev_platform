@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Candidates;
 use App\Models\Jobs;
 
+
 class JobApplications extends Model
 {
     use HasFactory;
@@ -16,7 +17,8 @@ class JobApplications extends Model
     protected $fillable = [
         'candidate_id',
         'job_id',
-        'created_at_job'
+        'created_at_job',
+        'score'
     ];
 
     public function candidates()
@@ -29,7 +31,8 @@ class JobApplications extends Model
         return $this->belongsTo(Jobs::class, 'job_id');
     }
 
-    public function countJobApplicationsByJobId($jobId){
-        return $this -> where('job_id',$jobId) -> count();
+    public function countJobApplicationsByJobId($jobId)
+    {
+        return $this->where('job_id', $jobId)->count();
     }
 }

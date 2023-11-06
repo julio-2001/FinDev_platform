@@ -8,6 +8,7 @@ use Database\Seeders\CandidatesTableSeeder;
 use Database\Seeders\JobsTableSeeder;
 use Database\Seeders\ExperiencesTableSeeder;
 use Database\Seeders\LocationTableSeeder;
+use Database\Seeders\DistanceTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,9 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this -> call(LocationTableSeeder::class);
-        $this -> call(ExperiencesTableSeeder::class);
-        $this -> call(CandidatesTableSeeder::class);
-        $this -> call(JobsTableSeeder::class);
+        $this->call(LocationTableSeeder::class);
+        $this->call(DistanceTableSeeder::class);
+        $this->call(ExperiencesTableSeeder::class);
+        $this->call(CandidatesTableSeeder::class);
+        $this->call(JobsTableSeeder::class);
     }
 }

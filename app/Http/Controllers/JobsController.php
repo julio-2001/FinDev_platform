@@ -16,8 +16,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::with('experiencesName','locationsName')->get();
-        return view('jobs.list',["jobs" => $jobs]);
+        $jobs = Jobs::with('experiencesName', 'locationsName')->get();
+        return view('jobs.list', ["jobs" => $jobs]);
     }
 
     /**
@@ -26,7 +26,7 @@ class JobsController extends Controller
     public function create()
     {
         $experiences = Experiences::all();
-        return view('jobs.form',['experiences' => $experiences]);
+        return view('jobs.form', ['experiences' => $experiences]);
     }
 
     /**
@@ -36,21 +36,21 @@ class JobsController extends Controller
     {
         $body = $request->all();
 
-        if(!empty($body['id'])){
+        if (!empty($body['id'])) {
             $jobs = Jobs::find($body['id']);
-        }else{
+        } else {
             $jobs = new Jobs;
         }
 
-        $jobs -> company = $body['company'];
-        $jobs -> title = $body['title'];
-        $jobs -> description = $body['description'];
-        $jobs -> experience = $body['experience'];
-        $jobs -> location = $body['location'];
+        $jobs->company = $body['company'];
+        $jobs->title = $body['title'];
+        $jobs->description = $body['description'];
+        $jobs->experience = $body['experience'];
+        $jobs->location = $body['location'];
 
-        $jobs -> save();
+        $jobs->save();
 
-       return redirect('/v1/vagas');
+        return redirect('/v1/vagas');
     }
 
     /**
@@ -68,7 +68,7 @@ class JobsController extends Controller
     {
         $job = Jobs::find($id);
         $experiences = Experiences::all();
-        return view('jobs.form',['job' => $job, 'experiences' => $experiences]);
+        return view('jobs.form', ['job' => $job, 'experiences' => $experiences]);
     }
 
     /**
@@ -84,14 +84,14 @@ class JobsController extends Controller
      */
     public function destroy(string $id)
     {
-        $JobApplications =  JobApplications::where('job_id',$id);
+        $JobApplications =  JobApplications::where('job_id', $id);
 
-        if($JobApplications -> exists()){
-            $JobApplications -> delete();
+        if ($JobApplications->exists()) {
+            $JobApplications->delete();
         }
 
         $Job = Jobs::find($id);
-        $Job -> delete();
+        $Job->delete();
 
         return redirect('/v1/vagas');
     }
